@@ -41,13 +41,6 @@ cp images/* $RPM_BUILD_ROOT%{_datadir}/pixmaps/%name
 install -m644 %SOURCE10 -D %{buildroot}/%_miconsdir/%name.png
 install -m644 %SOURCE11 -D %{buildroot}/%_iconsdir/%name.png
 install -m644 %SOURCE12 -D %{buildroot}/%_liconsdir/%name.png
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > %{buildroot}/%{_menudir}/%{name} 
-?package(%name): command="%{_bindir}/%name" icon="%name.png" \
-                needs="X11" section="More Applications/Games/Toys" \
- title="Gai-sun" longtitle="Display time when they sun sets and rise" \
- xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -76,7 +69,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc INSTALL README README.gai
 %{_bindir}/*
 %{_libdir}/bonobo/servers/GNOME_%{name}Applet.server
-%{_menudir}/%name
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_datadir}/pixmaps/*
 %{_iconsdir}/%name.png
