@@ -7,7 +7,7 @@ Summary: Tells you when the Sun rises and set at a place on earth
 Version: %{version}
 Release: %{release}
 License: GPL
-Url: http://gai.sf.net
+Url: https://gai.sf.net
 Group: Games/Other
 Source: %{name}-%{version}.tar.bz2
 Source10:   %{name}-16.png
